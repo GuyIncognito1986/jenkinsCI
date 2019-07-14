@@ -75,7 +75,6 @@ ENV JENKINS_ENABLE_FUTURE_JAVA=true
 
 USER ${user}
 
-COPY jenkins-support /usr/local/bin/jenkins-support
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 ENTRYPOINT ["/bin/bash", "/usr/local/bin/jenkins.sh"]
 
