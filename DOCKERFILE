@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:latest as jenkinsDocker
 
-RUN apt-get update && \
+RUN sudo apt-get update && \
     apt-get -y install apt-transport-https \
     ca-certificates \
     curl \
