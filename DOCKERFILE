@@ -1,4 +1,4 @@
-FROM jenkins/jenkinms:latest as jenkinsDocker
+FROM jenkins/jenkins:latest as jenkinsDocker
 
 RUN apt-get update && \
     apt-get -y install apt-transport-https \
@@ -13,3 +13,5 @@ RUN apt-get update && \
     stable" && \
     apt-get update && \
     apt-get -y install docker-ce docker-compose
+
+ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/jenkins.sh"]
